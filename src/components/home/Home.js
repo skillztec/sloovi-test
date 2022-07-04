@@ -14,12 +14,12 @@ const Home = () => {
 
   //handles user logout
   const handleSignOut = () => {
-    // try {
-    //   dispatch(signOutUser());
-    // } catch (err) {
-    //   console.error(err.message);
-    //   alert(err.messsage);
-    // }
+    try {
+      dispatch(signOutUser());
+    } catch (err) {
+      console.error(err.message);
+      alert(err.messsage);
+    }
   };
 
   return (

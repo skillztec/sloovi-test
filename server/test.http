@@ -1,0 +1,10 @@
+POST http://localhost:5001/api/task
+Content-Type: application/json
+
+{
+	"author":"Chiedozie Ramsey",
+	"discription":"Eat code and repeat",
+	"task_date":"26/06/2022",
+	"task_time":"05:30am",
+	"is_completed":false,
+}

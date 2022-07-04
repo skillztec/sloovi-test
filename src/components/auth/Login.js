@@ -17,19 +17,19 @@ const Login = () => {
   //handles user login
   const handleSignIn = (event) => {
     event.preventDefault();
-    //try {
-      // dispatch(
-      //   loginUser({
-      //     user: user.email,
-      //     user: user.password,
-      //   }),
-      // );
+    try {
+      dispatch(
+        loginUser({
+          user: user.email,
+          user: user.password,
+        }),
+      );
       // setEmail('');
       // setPassword;('');
-    // } catch (err) {
-    //   console.error(err.message);
-    //   alert(err.messsage);
-    // }
+    } catch (err) {
+      console.error(err.message);
+      alert(err.messsage);
+    }
   };
 
   return (
