@@ -2,14 +2,14 @@ import React from 'react';
 import {Container, Row, Col, Form, Breadcrumb, Button, Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Task from '../task/Task';
-// import UserProfile from '../user';
-import { useSelector, useDispatch } from "react-redux";
-import { selectUser } from "../../store/slices/userSlice";
+import UserProfile from '../user';
+import { useDispatch } from "react-redux";
 import { signOutUser } from "../../store/slices/userSlice";
 
 
+
 const Home = () => {
-	 const userName = useSelector(selectUser);
+	//  const user = useSelector(selectUser);
    const dispatch = useDispatch();
 
   //handles user logout
@@ -30,7 +30,7 @@ const Home = () => {
             <Breadcrumb.Item>Home</Breadcrumb.Item>
             <Breadcrumb.Item>Services</Breadcrumb.Item>
             <Breadcrumb.Item>About Us</Breadcrumb.Item>
-            <Breadcrumb.Item onClick={handleSignOut()}>Logout</Breadcrumb.Item>
+            <Breadcrumb.Item onClick={handleSignOut}>Logout</Breadcrumb.Item>
           </Breadcrumb>
         </header>
         <contents>

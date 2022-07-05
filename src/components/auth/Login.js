@@ -3,15 +3,15 @@ import {
   Button,
 } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { selectUser } from "../../store/slices/userSlice";
-import { loginUser } from "../../store/slices/userSlice";
+import { selectUser, loginUser } from "../../store/slices/userSlice";
+// import { loginUser } from "../../store/slices/userSlice";
 
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-   const userName = useSelector(selectUser);
+   const user = useSelector(selectUser);
    const dispatch = useDispatch();
 
   //handles user login
@@ -23,9 +23,9 @@ const Login = () => {
           user: user.email,
           user: user.password,
         }),
+        // setEmail('');
+        // setPassword;('');
       );
-      // setEmail('');
-      // setPassword;('');
     } catch (err) {
       console.error(err.message);
       alert(err.messsage);
@@ -36,9 +36,10 @@ const Login = () => {
     <div>
       <h4>It looks like you're not signed-in!</h4>
       <h5>Please Login with your Gmail to proceed to your Task Dashboard</h5>
-      <div className="container">
+      <div className="container" 
+      style={{display: 'flex', flexDirection: 'column', alignitems: 'center', justifyContent: 'center'}}>
         <div className="form-div p-3">
-          <form onSubmit={handleSignIn()} className="m-4">
+          <form onSubmit={handleSignIn} className="m-4">
             <input
               className="form-control form-group"
               type="text"
@@ -50,11 +51,13 @@ const Login = () => {
               className="form-control form-group mt-3"
               type="text"
               placeholder="Password"
+              secureTextEntry={true}
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
           </form>
-          <Button className="btn btn-primary" onClick={handleSignIn()}>
+          <Button className="btn btn-primary" 
+          onClick={handleSignIn}>
             Login
           </Button>
         </div>

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { createTaskAsync } from "./apiCrud";
 
 const innitialState = {
   tasks: [
@@ -63,7 +64,10 @@ const taskSlice = createSlice({
     deleteTask: (state, action) => {
       return state.filter((task) => task.task_id === action.payload.task_id)
     }
-  }
+  },
+
+  //extra reducers
+  extraReducers: {}
 });
 
 export const { creatNewTask, updateTask, deleteTask } = taskSlice.actions;
